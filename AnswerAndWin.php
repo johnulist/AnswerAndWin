@@ -26,7 +26,7 @@ class AnswerAndWin extends Module
 {			
   public function __construct()
   {  		  	
-	  $this->name = 'Answer And Win';
+	  $this->name = 'AnswerAndWin';
 	  $this->tab = 'front_office_features';
 	  $this->version = '1.4';
 	  $this->ps_versions_compliancy['min'] = '1.5.0.1'; 
@@ -54,21 +54,27 @@ class AnswerAndWin extends Module
 				return false;
 								
 // 		// Install Tabs
-		$parent_tab = new Tab();
-		$parent_tab->name = 'Questions and Win';
-		$parent_tab->class_name = 'AdminMainExample';
-		$parent_tab->id_parent = 2;
-		$parent_tab->module = $this->name;
-		$parent_tab->add();
+// 		$parent_tab = new Tab();
+// 		$parent_tab->name[$this->context->language->id] = 'Questions and Win';
+		
+// 		$parent_tab->class_name = 'AdminMainExample';
+// 		$parent_tab->id_parent = 2;
+// 		$parent_tab->module = $this->name;
+// 		$parent_tab->add();
 		
 		
+// 		$tab = new Tab();
+// 		$tab->name[$this->context->language->id] = 'Questions and Win ';
+// 		$tab->class_name = 'AdminExample';
+// 		$tab->id_parent = $parent_tab->id;
+// 		$tab->module = $this->name;
+// 		$tab->add();
 		$tab = new Tab();
-		$tab->name = 'Questions and Win ';
-		$tab->class_name = 'AdminExample';
-		$tab->id_parent = $parent_tab->id;
-		$tab->module = $this->name;
-		$tab->add();
-		
+		$tab->class_name = 'AdminAnswerAndWin';
+		$tab->id_parent = 2;
+		$tab->module = 'AdminAnswerAndWin';
+		$tab->name[(int)(Configuration::get('PS_LANG_DEFAULT'))] = $this->l('Answer and Win');
+	   $tab->add();
 		
 		//Init
 		Configuration::updateValue('EXAMPLE_CONF', '');	

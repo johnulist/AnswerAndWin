@@ -1,4 +1,4 @@
-{if $errors|@count > 0}
+{if isset($errors) && $errors|@count > 0}
 	<div class="error">
 		<ul>
 			{foreach from=$errors item=error}

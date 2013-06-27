@@ -6,7 +6,7 @@
 	// Create Table in Database
 	$sql[] = 'CREATE TABLE IF NOT EXISTS `'._DB_PREFIX_.'answerandwin` (
 `id` INT( 10 ) UNSIGNED NOT NULL ,
-`questions` VARCHAR( 255 ) NOT NULL ,
+`question` VARCHAR( 255 ) NOT NULL ,
 `response` VARCHAR( 255 ) NOT NULL ,
 `fk_id_rule` INT( 10 ) UNSIGNED NOT NULL ,
 `count_offer` INT UNSIGNED NOT NULL ,
